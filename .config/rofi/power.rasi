@@ -1,0 +1,92 @@
+/**
+ * =============================================================================
+ * ROFI POWER MENU: SOFT PASTEL AUTUMN / ROSE DROPDOWN
+ * =============================================================================
+ */
+
+* {
+    bg:             rgba(38, 24, 28, 0.96);
+    bg-alt:         rgba(58, 36, 42, 0.90);
+    bg-selected:    rgba(224, 108, 117, 0.88);
+    fg:             #faedf2;
+    fg-dim:         #cfb29e;
+    sakura:         #f4a7b9;
+    border-col:     rgba(244, 167, 185, 0.65);
+    border-dark:    rgba(90, 55, 65, 0.70);
+
+    background-color: transparent;
+    text-color:       var(fg);
+    font:             "JetBrainsMono Nerd Font 10.5";
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
+}
+
+window {
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -14px;
+    y-offset:         58px;
+    width:            320px;
+    background-color: var(bg);
+    border:           2px;
+    border-color:     var(border-col);
+    border-radius:    18px;
+    padding:          14px;
+}
+
+mainbox {
+    spacing:          8px;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: var(bg-alt);
+    border:           1px;
+    border-color:     var(border-dark);
+    border-radius:    12px;
+    padding:          6px 12px;
+    children:         [ "prompt" ];
+}
+
+prompt {
+    text-color:       var(sakura);
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+listview {
+    lines:            5;
+    columns:          1;
+    spacing:          4px;
+    cycle:            true;
+    scrollbar:        false;
+}
+
+element {
+    padding:          8px 12px;
+    border-radius:    10px;
+    background-color: transparent;
+    text-color:       var(fg);
+    spacing:          10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       var(fg);
+}
+
+element alternate.normal {
+    background-color: rgba(255, 255, 255, 0.02);
+    text-color:       var(fg);
+}
+
+element selected.normal {
+    background-color: var(bg-selected);
+    text-color:       #ffffff;
+    border-radius:    10px;
+}
+
+element-text {
+    text-color:       inherit;
+    vertical-align:   0.5;
+}

@@ -1,0 +1,211 @@
+/* =============================================================================
+ * WAYBAR AUTUMN KEMONO TOP DOCK STYLING (Glazed Cedar Amber)
+ * ============================================================================= */
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font", Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    min-height: 0;
+}
+
+/* Главная панель: теплый осенний лакированный кедр без прямоугольных теней */
+window#waybar {
+    background: rgba(56, 34, 24, 0.88);
+    border: 2px solid rgba(230, 167, 60, 0.70);
+    border-radius: 20px;
+    color: #fcefe6;
+}
+
+/* Логотип системы (Осенний листок Artix) */
+#custom-os_icon {
+    font-size: 18px;
+    color: #f6c464;
+    margin: 3px 6px;
+    padding: 1px 11px;
+    background: rgba(216, 107, 39, 0.35);
+    border: 1.5px solid rgba(240, 175, 75, 0.50);
+    border-radius: 14px;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#custom-os_icon:hover {
+    background: #d86b27;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Медиаплеер слева */
+#custom-music {
+    color: #f6c464;
+    background: rgba(76, 46, 32, 0.82);
+    border: 1px solid rgba(230, 167, 60, 0.40);
+    border-radius: 14px;
+    padding: 2px 12px;
+    margin: 3px;
+}
+
+/* =============================================================================
+ * 10 ИДЕАЛЬНО КРУГЛЫХ РАБОЧИХ СТОЛОВ ПО ЦЕНТРУ (AUTUMN KEMONO ORBS)
+ * ============================================================================= */
+#workspaces {
+    background: rgba(68, 40, 27, 0.88);
+    border: 1.5px solid rgba(230, 167, 60, 0.55);
+    border-radius: 22px;
+    margin: 3px;
+    padding: 2px 8px;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin: 6px 5px;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+    color: #fcefe6;
+    background: rgba(230, 167, 60, 0.40);
+    border: 1.5px solid rgba(240, 180, 80, 0.65);
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Пустые столы: миниатюрные мерцающие осенние огоньки */
+#workspaces button.empty {
+    min-width: 12px;
+    min-height: 12px;
+    margin: 7px 5px;
+    background: rgba(216, 107, 39, 0.55);
+    border: 1.5px solid rgba(240, 180, 80, 0.75);
+    animation: pulse-shimmer 2.5s ease-in-out infinite alternate;
+}
+
+/* Столы с открытыми приложениями: кружок становится аккуратной капсулой с иконкой */
+#workspaces button:not(.empty) {
+    min-width: 28px;
+    min-height: 24px;
+    margin: 2px 4px;
+    padding: 1px 7px;
+    border-radius: 12px;
+    background: rgba(85, 48, 30, 0.92);
+    border: 1.5px solid #f6c464;
+    color: #f6c464;
+    font-size: 13px;
+}
+
+/* Активный стол */
+#workspaces button.active {
+    background: #e6a73c;
+    color: #140f0c;
+    border: 1.5px solid #ffffff;
+    font-weight: 900;
+}
+
+#workspaces button.empty.active {
+    min-width: 14px;
+    min-height: 14px;
+    margin: 6px 5px;
+    background: #e6a73c;
+    border: 2px solid #ffffff;
+}
+
+#workspaces button:hover {
+    background: #d86b27;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ffffff;
+    background: #be382f;
+    animation: urgent-blink 0.8s infinite alternate;
+}
+
+@keyframes pulse-shimmer {
+    0% {
+        background: rgba(216, 107, 39, 0.40);
+        border-color: rgba(230, 167, 60, 0.55);
+    }
+    100% {
+        background: rgba(240, 140, 50, 0.80);
+        border-color: rgba(255, 210, 110, 0.95);
+    }
+}
+
+@keyframes urgent-blink {
+    to { background-color: rgba(190, 56, 47, 0.3); }
+}
+
+/* =============================================================================
+ * МОДУЛИ СПРАВА
+ * ============================================================================= */
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#language,
+#clock,
+#custom-power {
+    background: rgba(68, 40, 27, 0.88);
+    border: 1px solid rgba(95, 58, 40, 0.70);
+    border-radius: 14px;
+    padding: 3px 10px;
+    margin: 3px 2px;
+    color: #fcefe6;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio {
+    color: #f4a7b9;
+}
+
+#pulseaudio:hover {
+    background: rgba(244, 167, 185, 0.35);
+    color: #ffffff;
+    border-color: #f4a7b9;
+}
+
+#pulseaudio.muted {
+    color: #8f7665;
+}
+
+#network {
+    color: #f6c464;
+}
+
+#network:hover {
+    background: #d86b27;
+    color: #ffffff;
+    border-color: #f6c464;
+}
+
+#cpu {
+    color: #e6a73c;
+}
+
+#memory {
+    color: #f6c464;
+}
+
+#language {
+    color: #fcefe6;
+    background: rgba(85, 48, 30, 0.88);
+    border: 1px solid rgba(230, 167, 60, 0.45);
+}
+
+#clock {
+    color: #fcefe6;
+    background: rgba(216, 107, 39, 0.55);
+    border: 1.5px solid rgba(240, 175, 75, 0.70);
+    font-weight: 800;
+}
+
+#custom-power {
+    color: #e85348;
+    font-size: 15px;
+    margin-right: 4px;
+}
+
+#custom-power:hover {
+    background: #be382f;
+    color: #ffffff;
+}

@@ -1,0 +1,33 @@
+/* =============================================================================
+   CUSTOM GTK4 STYLING: SAKURA & AUTUMN VELVET MAUVE
+   ============================================================================= */
+
+@define-color theme_base_color #170f14;
+@define-color theme_bg_color #1e151b;
+@define-color theme_fg_color #faedf2;
+@define-color theme_text_color #faedf2;
+@define-color theme_selected_bg_color #f4a7b9;
+@define-color theme_selected_fg_color #1c141a;
+
+window,
+dialog,
+.background {
+    background-color: #1e151b;
+    color: #faedf2;
+}
+
+view,
+iconview,
+treeview,
+.view,
+.content-view,
+textview text,
+scrolledwindow viewport {
+    background-color: #170f14;
+    color: #faedf2;
+}
+
+:selected {
+    background-color: #543345;
+    color: #faedf2;
+}

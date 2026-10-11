@@ -1,0 +1,15 @@
+configuration {
+    modi: "drun,window,run";
+    font: "JetBrainsMono Nerd Font 11";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "   Apps ";
+    display-window: "   Windows ";
+    display-run: "   Run ";
+    drun-display-format: "{name}";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+@theme "~/.config/rofi/autumn.rasi"

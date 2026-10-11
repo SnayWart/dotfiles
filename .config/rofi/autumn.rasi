@@ -1,0 +1,89 @@
+* {
+    bg:          #140f0cf2;
+    bg-alt:      #241a15f5;
+    bg-selected: #d86b27ee;
+    fg:          #fcefe6;
+    fg-dim:      #cfb29e;
+    gold:        #e6a73c;
+    border-col:  #e6a73c;
+    border-dark: #382820;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
+    font:             "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            720px;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @gold;
+    border-radius:    20px;
+    padding:          24px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  18px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border:           1px;
+    border-color:     @border-dark;
+    border-radius:    14px;
+    padding:          12px 16px;
+    children:         [ prompt, entry ];
+    spacing:          12px;
+}
+
+prompt {
+    text-color:       @gold;
+    font:             "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    placeholder:      "Поиск приложений, файлов и настроек...";
+    placeholder-color:@fg-dim;
+    text-color:       @fg;
+}
+
+listview {
+    lines:      7;
+    columns:    1;
+    spacing:    8px;
+    cycle:      true;
+    dynamic:    true;
+}
+
+element {
+    padding:          10px 14px;
+    border-radius:    12px;
+    background-color: transparent;
+    text-color:       @fg;
+    children:         [ element-icon, element-text ];
+    spacing:          14px;
+    border:           0px;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color:       #ffffff;
+    border:           1px;
+    border-color:     @gold;
+}
+
+element-icon {
+    size: 28px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+    font: "JetBrainsMono Nerd Font Bold 11";
+}

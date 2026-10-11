@@ -1,0 +1,198 @@
+/* =============================================================================
+   CUSTOM GTK3 STYLING: SAKURA & AUTUMN VELVET MAUVE (THUNAR & SYSTEM APPS)
+   ============================================================================= */
+
+/* 1. Global Color Definitions */
+@define-color theme_base_color #170f14;
+@define-color theme_bg_color #1e151b;
+@define-color theme_fg_color #faedf2;
+@define-color theme_text_color #faedf2;
+@define-color theme_selected_bg_color #f4a7b9;
+@define-color theme_selected_fg_color #1c141a;
+@define-color insensitive_bg_color #251b22;
+@define-color insensitive_fg_color #8c7382;
+@define-color borders #3d2735;
+@define-color unfocused_borders #2d1c27;
+
+/* 2. Base Windows & Backgrounds */
+window,
+dialog,
+.background,
+messagedialog {
+    background-color: #1e151b;
+    color: #faedf2;
+}
+
+/* 3. Central Views, Icon Views, File Grids (Fixes white Thunar view) */
+view,
+iconview,
+treeview,
+.view,
+.content-view,
+textview,
+textview text,
+scrolledwindow,
+scrolledwindow viewport,
+viewport.frame {
+    background-color: #170f14;
+    color: #faedf2;
+}
+
+/* 4. Menubars, Menus & Toolbars */
+menubar,
+.menubar,
+menubar > menuitem {
+    background-color: #191117;
+    color: #faedf2;
+    padding: 3px 6px;
+}
+
+menubar > menuitem:hover {
+    background-color: #35212e;
+    color: #f4a7b9;
+}
+
+menu,
+.menu {
+    background-color: #1c141a;
+    color: #faedf2;
+    border: 1px solid #3d2735;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+menuitem {
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: #faedf2;
+}
+
+menuitem:hover {
+    background-color: #543345;
+    color: #faedf2;
+}
+
+headerbar,
+toolbar,
+.toolbar {
+    background-color: #191117;
+    color: #faedf2;
+    border-bottom: 1px solid #35232e;
+}
+
+/* 5. Thunar File Manager Specific Components */
+.thunar window,
+thunar-window,
+.thunar-window {
+    background-color: #1e151b;
+    color: #faedf2;
+}
+
+/* Thunar Side Pane */
+.thunar .sidebar,
+.thunar .sidebar treeview,
+.thunar .sidebar .view {
+    background-color: #140d12;
+    color: #cfb29e;
+    border-right: 1px solid #35232e;
+}
+
+.thunar .sidebar treeview:selected,
+.thunar .sidebar treeview:selected:focus {
+    background-color: #543345;
+    color: #faedf2;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Thunar Main File Grid / List */
+.thunar .standard-view,
+.thunar .standard-view .view,
+.thunar .standard-view iconview,
+.thunar .standard-view treeview,
+.thunar-view {
+    background-color: #170f14;
+    color: #faedf2;
+}
+
+.thunar .standard-view iconview:hover,
+.thunar .standard-view treeview:hover {
+    background-color: #261822;
+}
+
+/* Path Bar & Navigation Buttons */
+.thunar .path-bar-box {
+    background-color: #191117;
+    border-bottom: 1px solid #35232e;
+    padding: 3px 6px;
+}
+
+.thunar .path-bar-box button {
+    border-radius: 8px;
+    margin: 2px 4px;
+    background-color: #2a1d26;
+    color: #faedf2;
+    border: 1px solid #3d2735;
+    padding: 3px 8px;
+}
+
+.thunar .path-bar-box button:hover {
+    background-color: #3d2735;
+    border-color: #f4a7b9;
+    color: #ffffff;
+}
+
+/* Status Bar */
+.thunar .statusbar,
+statusbar {
+    background-color: #140d12;
+    color: #b89fae;
+    border-top: 1px solid #35232e;
+    padding: 3px 8px;
+    font-size: 11px;
+}
+
+/* 6. Inputs & Entries */
+entry,
+search-entry {
+    background-color: #241820;
+    color: #faedf2;
+    border: 1px solid #3d2735;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+entry:focus {
+    border-color: #f4a7b9;
+    box-shadow: 0 0 0 1px #f4a7b9;
+}
+
+/* 7. Selection Highlights */
+:selected,
+entry:selected,
+treeview:selected,
+iconview:selected {
+    background-color: #543345;
+    color: #faedf2;
+    border: 1px solid #f4a7b9;
+    border-radius: 8px;
+}
+
+/* 8. Scrollbars */
+scrollbar,
+scrollbar.vertical,
+scrollbar.horizontal {
+    background-color: transparent;
+    border: none;
+}
+
+scrollbar slider {
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 10px;
+    background-color: #4a3444;
+}
+
+scrollbar slider:hover {
+    background-color: #f4a7b9;
+}

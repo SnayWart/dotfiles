@@ -1,0 +1,144 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "margin-top": 8,
+    "margin-left": 14,
+    "margin-right": 14,
+    "spacing": 8,
+
+    "modules-left": [
+        "custom/os_icon",
+        "custom/music"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "hyprland/language",
+        "clock",
+        "custom/power"
+    ],
+
+    "custom/os_icon": {
+        "format": " 󰣇 ",
+        "tooltip-format": "Artix Linux\nНажмите: Открыть меню приложений (Rofi)",
+        "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": "󰘔",
+        "window-rewrite": {
+            "class<kitty>": "󰄛",
+            "class<Throne>": "🐇",
+            "class<antigravity>": "󰈸",
+            "class<com.ayugram.desktop>": "󰒱",
+            "class<AyuGram>": "󰒱",
+            "class<TelegramDesktop>": "󰒱",
+            "class<com.obsproject.Studio>": "󰕧",
+            "class<obs>": "󰕧",
+            "class<firefox>": "󰈹",
+            "class<codium>": "󰨞",
+            "class<vscodium>": "󰨞",
+            "class<thunar>": "󰉋",
+            "class<pavucontrol>": "󰕾",
+            "class<mpv>": "󰎈",
+            "class<sober>": "󰊴",
+            "class<org.vinegarhq.Sober>": "󰊴",
+            "class<waterfox>": "󰈹",
+            "class<Waterfox>": "󰈹",
+            "class<VirtualBox Manager>": "󰢹",
+            "class<VirtualBox Machine>": "󰢹",
+            "class<virtualbox>": "󰢹",
+            "class<VirtualBox>": "󰢹"
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+
+    "custom/music": {
+        "format": "󰎈 {}",
+        "max-length": 30,
+        "exec": "playerctl metadata --format '{{title}}' 2>/dev/null || echo ''",
+        "interval": 2,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "tooltip": true
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤭 Офлайн",
+        "tooltip-format-wifi": "{essid}\nКачество: {signalStrength}%\nIP: {ipaddr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Сеть отключена",
+        "on-click": "/home/snaywart/.config/hypr/scripts/wifi_menu.sh"
+    },
+
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "󰑭 {percentage}%",
+        "tooltip-format": "ОЗУ: {used:0.1f}ГБ / {total:0.1f}ГБ",
+        "interval": 3
+    },
+
+    "clock": {
+        "format": "󱑂 {:%H:%M}",
+        "format-alt": "󰸗 {:%A, %d %B %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#e6a73c'><b>{}</b></span>",
+                "days":       "<span color='#fcefe6'><b>{}</b></span>",
+                "weeks":      "<span color='#d86b27'><b>W{}</b></span>",
+                "weekdays":   "<span color='#e6a73c'><b>{}</b></span>",
+                "today":      "<span color='#be382f'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Mute",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "/home/snaywart/.config/hypr/scripts/control_center.sh",
+        "tooltip-format": "Громкость: {volume}%\nКлик: Mute | Правый клик: Панель управления"
+    },
+
+    "custom/power": {
+        "format": "  ",
+        "tooltip-format": "Меню питания",
+        "on-click": "/home/snaywart/.config/hypr/scripts/power_menu.sh"
+    }
+}

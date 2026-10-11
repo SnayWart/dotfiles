@@ -1,0 +1,116 @@
+/**
+ * =============================================================================
+ * ROFI CONTROL CENTER: END-4 INSPIRED COMPACT VERTICAL SIDEBAR
+ * =============================================================================
+ */
+
+* {
+    bg:             rgba(30, 20, 24, 0.96);
+    bg-alt:         rgba(48, 30, 36, 0.92);
+    bg-selected:    rgba(244, 167, 185, 0.25);
+    border-selected: #f4a7b9;
+    fg:             #faedf2;
+    fg-dim:         #cfb29e;
+    sakura:         #f4a7b9;
+    amber:          #f5c280;
+    border-col:     rgba(244, 167, 185, 0.65);
+    border-dark:    rgba(80, 50, 60, 0.70);
+
+    background-color: transparent;
+    text-color:       var(fg);
+    font:             "JetBrainsMono Nerd Font 10.5";
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
+}
+
+window {
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -14px;
+    y-offset:         58px;
+    width:            380px;
+    background-color: var(bg);
+    border:           2px;
+    border-color:     var(border-col);
+    border-radius:    20px;
+    padding:          16px;
+}
+
+mainbox {
+    spacing:          10px;
+    children:         [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    background-color: var(bg-alt);
+    border:           1px;
+    border-color:     var(border-dark);
+    border-radius:    12px;
+    padding:          8px 12px;
+    spacing:          8px;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:       var(sakura);
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    placeholder:      "Поиск настроек...";
+    placeholder-color: var(fg-dim);
+    text-color:       var(fg);
+}
+
+message {
+    background-color: rgba(244, 167, 185, 0.12);
+    border:           1px;
+    border-color:     rgba(244, 167, 185, 0.35);
+    border-radius:    10px;
+    padding:          8px 12px;
+}
+
+textbox {
+    text-color:       var(fg);
+    font:             "JetBrainsMono Nerd Font 10";
+}
+
+listview {
+    lines:            9;
+    columns:          1;
+    spacing:          6px;
+    cycle:            true;
+    scrollbar:        false;
+}
+
+element {
+    padding:          8px 12px;
+    border-radius:    10px;
+    background-color: transparent;
+    text-color:       var(fg);
+    spacing:          10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       var(fg);
+}
+
+element alternate.normal {
+    background-color: rgba(255, 255, 255, 0.02);
+    text-color:       var(fg);
+}
+
+element selected.normal {
+    background-color: var(bg-selected);
+    border:           1px;
+    border-color:     var(border-selected);
+    text-color:       #ffffff;
+    border-radius:    10px;
+}
+
+element-text {
+    text-color:       inherit;
+    vertical-align:   0.5;
+}

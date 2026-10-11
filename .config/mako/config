@@ -1,0 +1,39 @@
+# =============================================================================
+# MAKO AUTUMN KEMONO NOTIFICATION DAEMON (Мягкое осеннее облачко)
+# =============================================================================
+font=JetBrainsMono Nerd Font 10.5
+width=360
+height=110
+margin=16
+padding=14
+border-size=2
+border-radius=18
+background-color=#140f0cf2
+text-color=#fcefe6
+border-color=#e6a73c
+progress-color=over #d86b27
+default-timeout=4000
+group-by=summary
+icons=1
+max-icon-size=48
+icon-location=left
+format=<b>%s</b>\n%b
+
+# Оформление для уведомлений запуска окон
+[app-name="Hyprland"]
+border-color=#e6a73c
+background-color=#1f1714f8
+text-color=#fcefe6
+default-timeout=3000
+
+[urgency=low]
+border-color=#8f7665
+default-timeout=2500
+
+[urgency=normal]
+border-color=#e6a73c
+
+[urgency=high]
+border-color=#be382f
+text-color=#ffffff
+default-timeout=0
