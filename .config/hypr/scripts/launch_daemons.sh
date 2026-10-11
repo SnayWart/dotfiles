@@ -66,7 +66,15 @@ fi
 # 7. Запускаем фоновые службы через setsid
 setsid -f ~/.config/hypr/scripts/launch_waybar.sh >/tmp/waybar.log 2>&1
 setsid -f mako >/tmp/mako.log 2>&1
-setsid -f hyprpaper -c /home/snaywart/.config/hypr/hyprpaper.conf >/tmp/hyprpaper.log 2>&1
+
+STATE_FILE="/home/snaywart/.config/hypr/.current_wallpaper"
+CURR_WP=$(cat "$STATE_FILE" 2>/dev/null)
+if [[ "$CURR_WP" == *.mp4 || "$CURR_WP" == *.webm ]]; then
+    setsid -f mpvpaper -o "no-audio --loop" DP-1 "$CURR_WP" >/tmp/mpvpaper.log 2>&1
+else
+    setsid -f hyprpaper -c /home/snaywart/.config/hypr/hyprpaper.conf >/tmp/hyprpaper.log 2>&1
+fi
+
 setsid -f hypridle >/dev/null 2>&1
 
 setsid -f wl-paste --type text --watch cliphist store >/dev/null 2>&1
